@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "846c487e-3a6f-4506-b7c0-81b3176c65df",
+		"name": "Persystance-networks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "SaveAvatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3NWVkMjNkMC02ODg0LTExZWMtOTk1OC05ZjU3YThmZTEzYTciLCJleHAiOjE2NDA3NzU4NTcsImlhdCI6MTY0MDc3MjI1N30.5XdxhOnnMpLduzKQzpZExGTPsLSTuK-wPDnQ_Qaanic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePic",
+									"type": "file",
+									"src": "/home/mahesh/Pictures/81goEFv+B4L._SS500_.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URI}}profile/image",
+							"host": [
+								"{{BASE_URI}}profile"
+							],
+							"path": [
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProfileData",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE4YTJmMzIwLTY4OTktMTFlYy05NmM5LTlmY2RiY2MyZGI3ZSIsInVzZXJJZCI6Ijc1ZWQyM2QwLTY4ODQtMTFlYy05OTU4LTlmNTdhOGZlMTNhNyIsImV4cCI6MTY0MDc4MDMyOSwiaWF0IjoxNjQwNzc2NzI5fQ.AeIke1GKmTW0gKQ3H-ioiRIE8uWesXvosvF6iq_8xBg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URI}}profile",
+							"host": [
+								"{{BASE_URI}}profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserService",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"shadowmaheshr@gmail.com\",\n    \"password\":\"12345\",\n    \"firstName\":\"Mahesh\",\n    \"lastName\":\"Bandara\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URI}}register",
+							"host": [
+								"{{BASE_URI}}register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AuthService",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"shadowmaheshr@gmail.com\",\n    \"password\":\"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URI}}login",
+							"host": [
+								"{{BASE_URI}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"18a2f320-6899-11ec-96c9-9fcdbcc2db7e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URI}}logout",
+							"host": [
+								"{{BASE_URI}}logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URI",
+			"value": "http://localhost:5000/"
+		}
+	]
+}
